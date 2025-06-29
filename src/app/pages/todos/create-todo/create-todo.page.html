@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nouvelle tâche</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="todoForm">
+    <ion-item>
+      <ion-input
+        label="Titre"
+        labelPlacement="stacked"
+        formControlName="title"
+        placeholder="Entrez le titre">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Description"
+        labelPlacement="stacked"
+        formControlName="description"
+        placeholder="Entrez la description">
+      </ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="onCreate()" [disabled]="todoForm.invalid">
+      Créer
+    </ion-button>
+  </form>
+</ion-content>

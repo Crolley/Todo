@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mes tâches</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button expand="block" color="medium" routerLink="/home">
+    Retour à l'accueil
+  </ion-button>
+  
+  <ion-button expand="block" routerLink="/create-todo">
+    Ajouter une tâche
+  </ion-button>
+
+  <ion-list *ngIf="todos.length > 0; else empty">
+    <ion-item *ngFor="let todo of todos">
+      <ion-checkbox
+        slot="start"
+        [checked]="todo.done"
+        (ionChange)="toggleDone(todo)">
+      </ion-checkbox>
+
+      <ion-label>
+        <h2 [style.textDecoration]="todo.done ? 'line-through' : 'none'">
+          {{ todo.title }}
+        </h2>
+        <p>{{ todo.description }}</p>
+      </ion-label>
+
+      <ion-button fill="clear" slot="end" (click)="editTodo(todo.id)">
+        Edit
+      </ion-button>
+
+      <ion-button color="danger" fill="clear" slot="end" (click)="deleteTodo(todo.id)">
+        Supprimer
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #empty>
+    <p>Aucune tâche enregistrée.</p>
+  </ng-template>
+</ion-content>

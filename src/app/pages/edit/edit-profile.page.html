@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Modifier le profil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <form [formGroup]="profileForm">
+      <ion-item>
+        <ion-input
+          label="Prénom"
+          labelPlacement="stacked"
+          formControlName="firstname"
+          placeholder="Entrez votre prénom">
+        </ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-input
+          label="Nom"
+          labelPlacement="stacked"
+          formControlName="lastname"
+          placeholder="Entrez votre nom">
+        </ion-input>
+      </ion-item>
+  
+      <ion-button
+        expand="block"
+        mode="ios"
+        [disabled]="profileForm.invalid"
+        (click)="onSave()">
+        Enregistrer les modifications
+      </ion-button>
+    </form>
+  </ion-content>
+  
