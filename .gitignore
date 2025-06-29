@@ -1,70 +1,62 @@
-# Specifies intentionally untracked files to ignore when using Git
-# http://git-scm.com/docs/gitignore
-
-*~
-*.sw[mnpcod]
-.tmp
-*.tmp
-*.tmp.*
-UserInterfaceState.xcuserstate
-$RECYCLE.BIN/
-
+# Logs
 *.log
 log.txt
-
-
-/.sourcemaps
-/.versions
-/coverage
-
-# Ionic
-/.ionic
-/www
-/platforms
-/plugins
-
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
-
-# Node
-/node_modules
 npm-debug.log
 yarn-error.log
 
+# System
+.DS_Store
+Thumbs.db
+$RECYCLE.BIN/
+
 # IDEs and editors
+.vscode/
 .idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
 *.sublime-project
 *.sublime-workspace
 
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
+# Node
+/node_modules
+/pnpm-lock.yaml
+/package-lock.json
 
-
-# Miscellaneous
+# Angular & Ionic build
+/dist
+/out-tsc
+/www
 /.angular
 /.angular/cache
-.sass-cache/
+/.ionic
+/.sourcemaps
+/.versions
+/tmp
+/testem.log
+
+# Capacitor & Cordova
+/platforms
+/plugins
+
+# Build artifacts
+coverage
+bazel-out
+
+# OS or miscellaneous
+*.tmp
+*.sw?
+*.tmp.*
+*.launch
+*.bak
+*.orig
+
+# NX
 /.nx
 /.nx/cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
 
-# System files
-.DS_Store
-Thumbs.db
+# VSCode recommended settings (keep if needed)
+/.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# Optional: ignore history folder if present
+.history/
